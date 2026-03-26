@@ -1,0 +1,8 @@
+{
+  "name": "frontend-plugin",
+  "description": "A plugin to generate modern frontend applications with React, Next.js, and TypeScript",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude AI Frontend Template"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "flutter-plugin",
+  "description": "A plugin to generate production-grade Flutter applications with Dart, Riverpod, Material 3, and comprehensive testing",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude AI Flutter Template"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "FLUTTER_ENV": "development"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(flutter *)",
+      "Bash(dart *)",
+      "Bash(dart run build_runner *)",
+      "Bash(flutterfire *)",
+      "Bash(fastlane *)",
+      "Bash(pod *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)",
+      "Bash(git checkout *)",
+      "Bash(git stash *)",
+      "Bash(git worktree *)",
+      "Bash(ls *)",
+      "Bash(cat pubspec.yaml)",
+      "Bash(cat analysis_options.yaml)",
+      "Bash(docker compose *)",
+      "Bash(docker ps *)",
+      "Bash(gh pr *)",
+      "Bash(gh issue *)",
+      "Bash(open *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)",
+      "Bash(git reset --hard *)",
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(./secrets/**)",
+      "Read(**/*keystore*)",
+      "Read(**/*key.properties*)",
+      "Read(**/GoogleService-Info.plist)",
+      "Read(**/google-services.json)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/auto-analyze.sh",
+            "timeout": 30,
+            "statusMessage": "Running Dart analysis..."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-dangerous.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/session-context.sh",
+            "timeout": 15,
+            "statusMessage": "Loading project context..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/stop-verification.sh",
+            "timeout": 15,
+            "statusMessage": "Verifying work before stopping..."
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/stop-verification.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
